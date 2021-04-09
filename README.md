@@ -37,6 +37,9 @@ A simple, fast, and efficient object detector **without** FPN.
   ```python
   python ./tools/train_net.py --num-gpus 8 --config-file ./configs/yolof_R_50_C5_1x.yaml
   ```
+  '''
+  --num-gpus 4 在实验中，默认为 8 的时候，会出现 NCCL 的错误。虽然我也不懂为什么改成 4 就没有错了。
+  '''
 - Test with `yolof`
   ```python
   python ./tools/train_net.py --num-gpus 8 --config-file ./configs/yolof_R_50_C5_1x.yaml --eval-only MODEL.WEIGHTS /path/to/checkpoint_file

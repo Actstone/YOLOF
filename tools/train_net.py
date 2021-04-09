@@ -229,7 +229,7 @@ if __name__ == "__main__":
         main,
         args.num_gpus,
         num_machines=args.num_machines,
-        machine_rank=args.machine_rank,
+        machine_rank=args.machine_rank,#设置默认为 0
         dist_url=args.dist_url,
         args=(args,),
     )
