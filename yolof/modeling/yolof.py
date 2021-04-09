@@ -169,8 +169,8 @@ class YOLOF(nn.Module):
         backbone_shape = backbone.output_shape()
         backbone_level = cfg.MODEL.YOLOF.ENCODER.BACKBONE_LEVEL
         feature_shapes = [backbone_shape[backbone_level]]
-        encoder = DilatedEncoder(cfg, backbone_shape)
-        decoder = Decoder(cfg)
+        encoder = DilatedEncoder(cfg, backbone_shape)                   #including a projector and four resdual blocks
+        decoder = Decoder(cfg)                                          #including classfication and regression
         anchor_generator = build_anchor_generator(cfg, feature_shapes)
         return {
             "backbone": backbone,
